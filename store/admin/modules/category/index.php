@@ -2,6 +2,7 @@
           $open="category";
         require_once ("../../../libraries/Database.php");
         require_once("../../../libraries/Function.php");
+           require_once("../../autoload/autoload.php");
         $db=new Database;
    
         $category =$db-> fetchAll("category");

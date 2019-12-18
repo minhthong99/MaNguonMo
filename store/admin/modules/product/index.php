@@ -2,6 +2,7 @@
         $open="product";
         require_once ("../../../libraries/Database.php");
         require_once("../../../libraries/Function.php");
+           require_once("../../autoload/autoload.php");
         $db=new Database;
    
         $product =$db-> fetchAll("product");
@@ -16,7 +17,7 @@
 
         $sql="SELECT product.*,category.name as namecate FROM product
               LEFT JOIN category on category.id = product.category_id";
-              $product =$db->fetchJone('product',$sql,$p,3,true);
+              $product =$db->fetchJone('product',$sql,$p,5,true);
 
               if(isset($product['page']))
               {
@@ -87,6 +88,7 @@
         <?php $stt++ ;endforeach ?>
         </tbody>
     </table>
+  </div>
     <div class="pull-right" style="float: right;">
         <nav aria-label="Page navigation example">
   <ul class="pagination" class="clearfix">

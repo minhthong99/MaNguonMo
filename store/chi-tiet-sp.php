@@ -8,6 +8,8 @@ require_once("autoload/autoload.php");
      $productNew=$db->fetchsql($sqlNew);
 
         $id=intval(getInput('id'));
+  $sqlPay="SELECT * FROM product Where 1 ORDER BY PAY DESC LIMIT 3";
+     $productPay= $db->fetchsql($sqlPay);
 
 
 
@@ -30,16 +32,16 @@ require_once("autoload/autoload.php");
                                 
                                 <ul class="text-center bor clearfix" id="imgdetail">
                                     <li>
-                                        <img src="<?php echo base_url() ?>public/frontend/images/kicks-galeria-Jordan-1-Rebel-XX-OG-WMNS-2.jpg" class="img-responsive pull-left" width="80" height="80">
+                                        <img src="<?php echo uploads() ?>product/<?php echo $product['thunbar'] ?>" class="img-responsive pull-left" width="80" height="80">
                                     </li>
                                     <li>
-                                        <img src="<?php echo base_url() ?>public/frontend/images/kicks-galeria-Jordan-1-Rebel-XX-OG-WMNS-2.jpg" class="img-responsive pull-left" width="80" height="80">
+                                        <img src="<?php echo uploads() ?>product/<?php echo $product['thunbar'] ?>" class="img-responsive pull-left" width="80" height="80">
                                     </li>
                                     <li>
-                                        <img src="<?php echo base_url() ?>public/frontend/images/kicks-galeria-Jordan-1-Rebel-XX-OG-WMNS-2.jpg" class="img-responsive pull-left" width="80" height="80">
+                                        <img src="<?php echo uploads() ?>product/<?php echo $product['thunbar'] ?>" class="img-responsive pull-left" width="80" height="80">
                                     </li>
                                     <li>
-                                        <img src="<?php echo base_url() ?>public/frontend/images/kicks-galeria-Jordan-1-Rebel-XX-OG-WMNS-2.jpg" class="img-responsive pull-left" width="80" height="80">
+                                        <img src="<?php echo uploads() ?>product/<?php echo $product['thunbar'] ?>" class="img-responsive pull-left" width="80" height="80">
                                     </li>
                                    
                                 </ul>
@@ -53,7 +55,7 @@ require_once("autoload/autoload.php");
                                   	<?php else : ?>
                                   	<li>	<p><?php echo formatPrice($product['price']) ?> </p></li>
                                    <?php endif ?>
-                                    <li><a href="" class="btn btn-default"> <i class="fa fa-shopping-basket"></i>Add TO Cart</a></li>
+                                    <li><a href="addcart.php?id=<?php echo $product['id'] ?>" class="btn btn-default"> <i class="fa fa-shopping-basket"></i>Add TO Cart</a></li>
                                </ul>
                             </div>
 

@@ -72,7 +72,7 @@ require_once("autoload/autoload.php");
    		}
    		else
    		{
- 
+ 			$_SESSION['error']="đăng ký thất bại";
    		}
    		}
    	}

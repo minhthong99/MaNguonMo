@@ -12,7 +12,7 @@
          
              "address" => postInput("address"),
              "email" =>postInput("email"),
-             "password" =>MD5(postInput("password")),
+             "password" =>postInput("password"),
             
               "phone" => postInput("phone"),
                "level" => postInput('name'),
@@ -51,7 +51,7 @@
                 }
                }    
            
-              if($data['password'] != MD5(postInput("re_password")))
+              if($data['password'] != postInput("re_password"))
               {
                 $error['password']="Mật khảu không khớp";
               }

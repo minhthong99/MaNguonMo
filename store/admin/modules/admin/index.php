@@ -2,6 +2,7 @@
         $open="admin";
         require_once ("../../../libraries/Database.php");
         require_once("../../../libraries/Function.php");
+        require_once("../../autoload/autoload.php");
         $db=new Database;
    
        
@@ -16,7 +17,7 @@
 
         $sql="SELECT admin.* FROM admin ORDER BY ID DESC ";
              
-              $admin =$db->fetchJone('admin',$sql,$p,1,true);
+              $admin =$db->fetchJone('admin',$sql,$p,4,true);
 
               if(isset($admin['page']))
               {

@@ -16,18 +16,33 @@
     </head>
     <body id="page-top">
         <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-            <a class="navbar-brand mr-1" href="index.html">Start Bootstrap</a>
+            <a class="navbar-brand mr-1" href="">Trang Admin - Xin Chào <?php echo $_SESSION['admin_name'] ?></a>
             <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
             <i class="fas fa-bars"></i>
             </button>
             <!-- Navbar Search -->
-           
-            <!-- Navbar -->
         
+       
+          <li >
+           <a href="/store/dang-xuat.php" ><i class=" "></i>Log Out</a>
+           
+         </li>
+    
+            <!-- Navbar -->
+          <ul class="navbar-nav ml-auto ml-md-0">
+            
+
+          </ul>
         </nav>
         <div id="wrapper">
             <!-- Sidebar -->
             <ul class="sidebar navbar-nav">
+                 <li >
+                    <a class="nav-link" href="<?php echo base_url() ?>admin">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Bảng điều khiển</span>
+                    </a>
+                </li>
                 <li class="<?php echo isset($open) && $open =='category' ? 'active' : ''?>">
                     <a class="nav-link" href="<?php echo modules("category")?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -40,12 +55,23 @@
                     <span>San Pham</span>
                     </a>
                 </li>
-                     <li class="<?php echo isset($open) && $open =='admin' ? 'active' : ''?>">
+                     <li class="<?php echo isset($open) && $open =='user' ? 'active' : ''?>">
+                    <a class="nav-link" href="<?php echo modules("user")?>">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Thành Viên</span>
+                    </a>
+                </li>
+                 <li class="<?php echo isset($open) && $open =='admin' ? 'active' : ''?>">
                     <a class="nav-link" href="<?php echo modules("admin")?>">
                     <i class="fas fa-user-shield"></i>
                     <span>Admin</span>
                     </a>
                 </li>
-             
+               <li class="<?php echo isset($open) && $open =='transaction' ? 'active' : ''?>">
+                    <a class="nav-link" href="<?php echo modules("transaction")?>">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Quản Lý Đơn Hàng</span>
+                    </a>
+                </li>
             
             </ul>

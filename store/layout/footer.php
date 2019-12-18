@@ -35,16 +35,15 @@
                         <div class="container">
                             <div class="col-md-3" id="ft-about">
                                 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco </p>
+                                <p>Tam Ky Shoes đã được thành lập vào năm 2017. Kể từ đó, hơn 100.000 khách hàng đã tin tưởng chúng tôi và khoảng. 250.000 người dùng facebook thích hồ sơ của chúng tôi. Chúng tôi chuyên bán giày bóng rổ  Chúng tôi có thể tự hào một cách khiêm tốn, rằng chúng tôi có thể có số lượng mẫu Air Jordan lớn nhất trên thế giới. Tất cả các sản phẩm của chúng tôi đến từ nhà phân phối chính thức và chúng là bản gốc 100%.
+                                Trên địa bàn của EU, chúng tôi vận chuyển hàng hóa qua chuyển phát nhanh DPD. Chúng tôi đề xuất một số phương thức thanh toán, nhưng để thuận tiện và bảo mật tiền của khách hàng, chúng tôi đã đề xuất hệ thống Paypal và E-card. </p>
                             </div>
                             <div class="col-md-3 box-footer" >
-                                <h3 class="tittle-footer">my accout</h3>
+                                <h3 class="tittle-footer">GET HELP</h3>
                                 <ul>
                                     <li>
                                         <i class="fa fa-angle-double-right"></i>
-                                        <a href=""><i></i> Giới thiệu</a>
+                                        <a href=""><i></i> Order Status</a>
                                     </li>
                                     <li>
                                         <i class="fa fa-angle-double-right"></i>
@@ -56,7 +55,7 @@
                                     </li>
                                     <li>
                                         <i class="fa fa-angle-double-right"></i>
-                                        <a href=""><i></i> My Account</a>
+                                        <a href=""><i></i> Retturns </a>
                                     </li>
                                     <li>
                                         <i class="fa fa-angle-double-right"></i>
@@ -65,28 +64,25 @@
                                 </ul>
                             </div>
                             <div class="col-md-3 box-footer">
-                                <h3 class="tittle-footer">my accout</h3>
+                                <h3 class="tittle-footer">ABOUT SHOP</h3>
                                <ul>
                                     <li>
                                         <i class="fa fa-angle-double-right"></i>
-                                        <a href=""><i></i> Giới thiệu</a>
+                                        <a href=""><i></i> News</a>
                                     </li>
                                     <li>
                                         <i class="fa fa-angle-double-right"></i>
-                                        <a href=""><i></i> Liên hệ </a>
+                                        <a href=""><i></i> Careers</a>
                                     </li>
                                     <li>
                                         <i class="fa fa-angle-double-right"></i>
-                                        <a href=""><i></i>  Contact </a>
+                                        <a href=""><i></i>  Sustainability </a>
                                     </li>
                                     <li>
                                         <i class="fa fa-angle-double-right"></i>
-                                        <a href=""><i></i> My Account</a>
+                                        <a href=""><i></i> Investors</a>
                                     </li>
-                                    <li>
-                                        <i class="fa fa-angle-double-right"></i>
-                                        <a href=""><i></i> Giới thiệu</a>
-                                    </li>
+                                  
                                 </ul>
                             </div>
                             <div class="col-md-3" id="footer-support">
@@ -128,4 +124,31 @@
             $hidenitem.hide(500);
         })
     })
+
+
+    $(function(){
+        $updatecart=$(".updatecart");
+        $updatecart.click(function(e) {
+          e.preventDefault();
+          $qty=$(this).parents("tr").find("#qty").val();
+
+          $key=$(this).attr("data-key");
+          $.ajax({
+            url: 'cap-nhat-gio-hang.php',
+            type: 'GET',
+            data: {'qty':$qty,'key':$key},
+            success:function(data)
+            {
+                if(data==1)
+                {
+                    alert("Cập nhật giỏ hang thành công");
+                    location.href="gio-hang.php";
+                }
+            }
+
+          });
+        })
+    })
+
 </script>
+  

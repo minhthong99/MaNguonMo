@@ -171,6 +171,22 @@
         $price=$number*(100 -$sale)/100;
         return formatPrice($price);
     }
+    function sale ($number)
+    {
+        $number=intval($number);
+        if($number <5000000)
+        {
+            return 0;
+        }
+        else if ($number < 10000000)
+        {
+            return 5;
+        }
+        else
+        {
+            return 10;
+        }
+    }
  ?>
 
 
