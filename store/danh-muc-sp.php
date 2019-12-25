@@ -8,6 +8,8 @@ require_once("autoload/autoload.php");
         	 $sqlNew ="SELECT * FROM product where 1 ORDER BY ID DESC LIMIT 3";
      $productNew=$db->fetchsql($sqlNew);
 
+ $sqlPay="SELECT * FROM product Where 1 ORDER BY PAY DESC LIMIT 3";
+     $productPay= $db->fetchsql($sqlPay);
 
           $id=intval(getInput('id'));
           $EditCategory =$db->fetchID("category",$id);
@@ -25,7 +27,7 @@ require_once("autoload/autoload.php");
 
           $total =count($db->fetchsql($sql));
 
-          $product=$db->fetchJones("product",$sql,$total,$p,2,true);
+          $product=$db->fetchJones("product",$sql,$total,$p,4,true);
           $sotrang=$product['page'];
         	unset($product['page']);
         	$path=$_SERVER['SCRIPT_NAME'];
@@ -45,7 +47,11 @@ require_once("autoload/autoload.php");
                                     </a>
                                     <div class="info-item">
                                         <a href="chi-tiet-sp.php?id=<?php echo $item['id'] ?>"><?php echo $item['name'] ?></a>
-                                        <p><strike class="sale"><?php echo formatPrice($item['price']) ?></strike> <b class="price"><?php echo formatpricesale($item['price'],$item['sale']) ?> </b></p>
+                                       <?php if($item['sale'] > 0) : ?>
+                                     <li><p><strike class="sale"><?php echo formatPrice($item['price']) ?></strike> <b class="price"><?php echo formatpricesale($item['price'],$item['sale']) ?></b></li>
+                                    <?php else : ?>
+                                    <li>  <p><?php echo formatPrice($item['price']) ?> </p></li>
+                                   <?php endif ?>
                                     </div>
                             
                               

@@ -51,7 +51,7 @@ require_once("autoload/autoload.php");
                                     <li><h3> <?php echo $product['name'] ?> </h3></li>
                                     <li><p> Khuyến mãi nếu có mà éo có thì thôi </p></li>
                                    <?php if($product['sale'] > 0) : ?>
-																		 <li><p><strike class="sale"><?php echo formatPrice($product['price']) ?></strike> <b class="price"><?php echo formatpricesale($product['price'],$product['sale']) ?></b</li>
+																		 <li><p><strike class="sale"><?php echo formatPrice($product['price']) ?></strike> <b class="price"><?php echo formatpricesale($product['price'],$product['sale']) ?></b></li>
                                   	<?php else : ?>
                                   	<li>	<p><?php echo formatPrice($product['price']) ?> </p></li>
                                    <?php endif ?>

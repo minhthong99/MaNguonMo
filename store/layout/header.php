@@ -80,7 +80,7 @@
                                         <li>
                                             <a href="#"><i class="fa fa-user "></i> My Account <i class="fa fa-caret-down"></i></a>
                                             <ul id="header-submenu" >
-                                                <li ><a href="">Contact</a></li>
+                                                <li ><a href="contact.php">Contact</a></li>
                                                 <li><a href="gio-hang.php">Cart</a></li>
                                                 <li><a href="thoat.php"><i class="fa fa-share-square-o"></i>Thoát</a></li>
                                             </ul>
@@ -104,20 +104,11 @@
                     <div class="row" id="header-main">
                         <div class="col-md-5">
                             <form class="form-inline">
-                                <div class="form-group">
-                                    <label>
-                                        <select name="category" class="form-control">
-                                            <option> All Category</option>
-                                          
-                                        </select>
-                                    </label>
-                                    <input type="text" name="keywork" id="header-search" placeholder=" input keywork" class="form-control">
-                                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                                </div>
+                               
                             </form>
                         </div>
                         <div class="col-md-4">
-                            <a href="" >
+                            <a href="index.php" >
                                 <img  src="public/uploads/product/logo.jpg">
                             </a>
                         </div>
@@ -181,38 +172,7 @@
                     <div class="col-md-3  fixside" >
                         <div class="box-left box-menu" >
                             <h3 class="box-title"><i class="fa fa-list"></i>  Danh mục</h3>
-                      <!--   <ul>
-                                <li>
-                                    <a href="">Máy tính  <span class="badge pull-right">14</span></a>
-                                    <ul>
-                                        <li><a href=""> Sonny 1</a></li>
-                                        <li><a href=""> Sonny 2</a></li>
-                                        <li><a href=""> Sonny 3</a></li>
-                                        <li><a href=""> Sonny 4</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="">Máy giặt  <span class="badge pull-right">14</span></a>
-                                    <ul>
-                                        <li><a href=""> Sonny 1</a></li>
-                                        <li><a href=""> Sonny 2</a></li>
-                                        <li><a href=""> Sonny 3</a></li>
-                                        <li><a href=""> Sonny 4</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="">Đồ điện  <span class="badge pull-right">14</span></a>
-                                </li>
-                                <li>
-                                    <a href=""> Thiết bị văn phòng  <span class="badge pull-right">14</span> </a>
-                                    <ul>
-                                        <li><a href=""> Sonny 1</a></li>
-                                        <li><a href=""> Sonny 2</a></li>
-                                        <li><a href=""> Sonny 3</a></li>
-                                        <li><a href=""> Sonny 4</a></li>
-                                    </ul>
-                                </li>
-                           </ul> -->
+                    
                             <ul>
                                 <?php foreach($category as $item) : ?>
                                <li> <a href="danh-muc-sp.php?id=<?php echo $item['id'] ?>" title=""><?php echo $item['name']  ?></a></li>
@@ -222,7 +182,7 @@
 
                         <div class="box-left box-menu">
                             <h3 class="box-title"><i class="fa fa-warning"></i>  Sản phẩm mới </h3>
-                           <!--  <marquee direction="down" onmouseover="this.stop()" onmouseout="this.start()"  > -->
+                     
                             <ul>
                                 <?php foreach ($productNew as $item): ?>
                                 <li class="clearfix">

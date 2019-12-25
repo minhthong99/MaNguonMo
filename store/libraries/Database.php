@@ -213,7 +213,7 @@
             
             return $data;
         }
-         public  function fetchJone($table,$sql ,$page = 0,$row ,$pagi = false )
+         public  function fetchJone($table,$sql ,$page = 0,$row ,$pagi = false )//phan trang
         {
             
             $data = [];

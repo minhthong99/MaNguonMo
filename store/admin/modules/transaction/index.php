@@ -50,6 +50,9 @@
                 <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 197px;">STT</th>
                 <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 301px;">Name</th>
                  <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 301px;">Phone</th>
+                  <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 301px;">Note</th>
+                   <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 301px;">Tổng Tiền</th>
+
                     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 301px;">Status</th>
                 <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 140px;">Action</th>
                
@@ -62,6 +65,8 @@
                 <td class="sorting_1"><?php echo $stt ?></td>
                 <td><?php echo $item['nameuser'] ?></td>
                 <td><?php echo $item['phoneuser'] ?></td>
+                 <td><?php echo $item['note'] ?></td>
+                  <td><?php echo $item['amount'] ?></td>
                 <td>
                   <a href="status.php?id=<?php echo $item ['id'] ?>" class="btn btn-xs <?php echo $item['status'] == 0 ? 'btn-danger' : 'btn-info' ?>"><?php echo $item['status'] == 0 ? 'Chưa Xử Lý ' :'Đã Xử Lý' ?></a>
                 </td>

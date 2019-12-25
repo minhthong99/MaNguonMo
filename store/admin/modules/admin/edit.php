@@ -19,7 +19,7 @@
          
              "address" => postInput("address"),
              "email" =>postInput("email"),
-           
+           	"password" =>postInput("password"),
             
               "phone" => postInput("phone"),
                "level" => postInput('name'),
@@ -66,7 +66,7 @@
                 }
                 else
                 {
-                  $data['password'] = MD5(postInput("password"));
+                  $data['password'] = postInput("password");
                 }
                }
             
@@ -162,7 +162,7 @@
                            <div class="form-group">
                             <label for="InputEmail1">Password</label>
                             <div class="col-md-7">
-                                 <input type="number" class="form-control" id="exampleInputEmail1" placeholder="********"  name="password">
+                                 <input type="password" class="form-control" id="exampleInputEmail1" placeholder="********"  name="password">
                              <?php if (isset($error['password'])): ?>
                                  <p class="text-danger">
                                      <?php echo $error['password'] ?>
@@ -177,7 +177,7 @@
                              <div class="form-group">
                             <label for="InputEmail1">ConfigPassword</label>
                             <div class="col-md-7">
-                                 <input type="number" class="form-control" id="exampleInputEmail1" placeholder="********"  name="re_password">
+                                 <input type="password" class="form-control" id="exampleInputEmail1" placeholder="********"  name="re_password">
                              <?php if (isset($error['re_password'])): ?>
                                  <p class="text-danger">
                                      <?php echo $error['re_password'] ?>

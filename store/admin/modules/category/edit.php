@@ -66,6 +66,7 @@
                else 
                {
                 $_SESSION['error']="du lieu khong thay doi";
+                  redirectAdmin("category");
                }
            }
         }

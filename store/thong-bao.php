@@ -6,6 +6,8 @@ require_once("autoload/autoload.php");
       $category =$db->fetchAll("category");
         $sqlNew ="SELECT * FROM product where 1 ORDER BY ID DESC LIMIT 3";
      $productNew=$db->fetchsql($sqlNew);
+       $sqlPay="SELECT * FROM product Where 1 ORDER BY PAY DESC LIMIT 3";
+     $productPay= $db->fetchsql($sqlPay);
 ?>
 <?php require_once ("layout/header.php"); ?>
 

@@ -3,7 +3,14 @@
  require_once ("libraries/Database.php");
     require_once("libraries/Function.php");
 require_once("autoload/autoload.php");
-
+  $db = new Database;
+     $category =$db->fetchAll("category");
+     $sqlNew ="SELECT * FROM product where 1 ORDER BY ID DESC LIMIT 3";
+     $productNew=$db->fetchsql($sqlNew);
+     $sqlHomecate="SELECT * FROM category Where home = 1 ORDER BY updated_at";
+     $CategoryHome=$db->fetchsql($sqlHomecate);
+     $sqlPay="SELECT * FROM product Where 1 ORDER BY PAY DESC LIMIT 3";
+     $productPay= $db->fetchsql($sqlPay);
      $db = new Database;
       $category =$db->fetchAll("category");
       
@@ -113,7 +120,7 @@ require_once("autoload/autoload.php");
                          	
                          			 <label class="col-md-2 col-md-offset-1"> Mật Khẩu</label>
                         	<div class="col-md-8">
-                        		<input type="number" name="password" placeholder="******" class="form-control" value="<?php echo $data['password'] ?>">
+                        		<input type="password" name="password" placeholder="******" class="form-control" value="<?php echo $data['password'] ?>">
                         		  <?php if( isset($error['password'])) : ?>
                         			<p class="text-danger"><?php echo $error['password'] ?></p>
                         		<?php endif ?>

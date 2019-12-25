@@ -8,7 +8,8 @@ require_once("autoload/autoload.php");
      $productNew=$db->fetchsql($sqlNew);
      $sqlHomecate="SELECT * FROM category Where home = 1 ORDER BY updated_at";
      $CategoryHome=$db->fetchsql($sqlHomecate);
-
+  $sqlPay="SELECT * FROM product Where 1 ORDER BY PAY DESC LIMIT 3";
+     $productPay= $db->fetchsql($sqlPay);
 $sum=0;
       if(! isset($_SESSION['cart']) | count ($_SESSION['cart'])==0)
       {

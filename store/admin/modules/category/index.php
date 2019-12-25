@@ -9,7 +9,23 @@
 
         //lenh phan trang
         
+           if(isset($_GET['page']))
+           {
+            $p=$_GET['page'];
+           } 
+        else{
+            $p=1;
+        }   
 
+        $sql="SELECT category.*,users.name as nameuser,users.phone as phoneuser FROM category LEFT JOIN users ON users.id=category.id ORDER BY ID DESC ";
+             
+              $category =$db->fetchJone('category',$sql,$p,4,true);
+
+              if(isset($category['page']))
+              {
+                $sotrang= $category['page'];
+                unset($category['page']);
+              }
 ?>  
  <!--Page Noi dung-->
 <?php require_once("../../layouts/header.php") ; ?>
@@ -64,18 +80,29 @@
         <?php $stt++ ;endforeach ?>
         </tbody>
     </table>
-    <div class="pull-right" style="float: right;">
-       <nav aria-label="Page navigation example">
-  <ul class="pagination">
+     <div class="pull-right" style="float: right;">
+        <nav aria-label="Page navigation example">
+  <ul class="pagination" class="clearfix">
     <li class="page-item">
       <a class="page-link" href="#" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
       </a>
     </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
+         <?php for ($i =1;$i <= $sotrang; $i++) : ?>
+            <?php
+                if(isset($_GET['page']))
+                {
+                    $p=$_GET['page'];
+                }
+                else
+                {
+                    $p=1;
+                }
+            ?>
+            <li class="<?php echo($i== $p) ? 'active' : '' ?>">
+                <a class="page-link" href="?page=<?php echo $i ; ?>"><?php echo $i; ?></a>
+            </li>
+        <?php endfor ; ?>
       <a class="page-link" href="#" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
       </a>
